@@ -6,10 +6,6 @@ workflows:
   elastic-beanstalk-workflow:
     jobs:
       - eb/deploy:
-          aws_access_key: AKIA2ONANONDEF47LQEF
-          aws_secret_key: zufTEZ2Zc7rU7Ucdtd1KC2qNHPd6EBy16p6U1hhh
-          application_name: react-sample-application-final
+          context: aws-creds
           environment_name: Reactsampleapplicationfinal-env
-          existing_bucket_name: elasticbeanstalk-ap-south-1-718132835142
-          region: ap-south-1
-          version_label: version-<<pipeline.number>>
+          label: version-<<pipeline.number>>
