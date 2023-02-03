@@ -1,0 +1,15 @@
+version: '2.1'
+orbs:
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+  node: circleci/node@4.1.0
+workflows:
+  elastic-beanstalk-workflow:
+    jobs:
+      - eb/deploy:
+          aws_access_key: AKIA2ONANONDEF47LQEF
+          aws_secret_key: zufTEZ2Zc7rU7Ucdtd1KC2qNHPd6EBy16p6U1hhh
+          application_name: react-sample-application-final
+          environment_name: Reactsampleapplicationfinal-env
+          existing_bucket_name: elasticbeanstalk-ap-south-1-718132835142
+          region: ap-south-1
+          version_label: version-<<pipeline.number>>
