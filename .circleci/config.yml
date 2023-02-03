@@ -7,4 +7,4 @@ workflows:
     jobs:
       - eb/deploy:
           context: aws-creds
-          environment-name: Neversaynever-env
+          environment-name: Reactsampleapplicationfinal-env
