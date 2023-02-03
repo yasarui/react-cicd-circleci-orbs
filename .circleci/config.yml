@@ -7,5 +7,5 @@ workflows:
     jobs:
       - eb/deploy:
           context: aws-creds
-          environment_name: Reactsampleapplicationfinal-env
+          environment-name: Reactsampleapplicationfinal-env
           label: version-<<pipeline.number>>
