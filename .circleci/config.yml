@@ -1,11 +1,11 @@
 version: '2.1'
 orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
-  node: circleci/node@4.1.0
+
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      - eb/deploy:
+      - aws-elastic-beanstalk/deploy:
           context: aws-creds
           environment-name: Reactsampleapplicationfinal-env
           application-name: react-sample-application-final
