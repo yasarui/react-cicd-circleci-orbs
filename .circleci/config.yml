@@ -1,17 +1,23 @@
+version: 2.1
 orbs:
   node: circleci/node@4.1
   eb: circleci/aws-elastic-beanstalk@2.0.0
+
+# [...] Some other things like jobs
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
+      - build-and-test
       - eb/deploy:
           context: aws-creds
-          application-name: react-docker
-          environment-name: Reactdocker-env
+          application-name: my-app-name
+          environment-name: my-app-environment-name
           filters:
             branches:
               only:
                 - master
           label: my-app-name-source-<<pipeline.number>>
+          requires:
+            - build-and-test
