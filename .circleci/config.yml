@@ -8,8 +8,8 @@ workflows:
       - node/test
       - eb/deploy:
           context: aws-creds
-+         application-name: react-docker
-+         environment-name: Reactdocker-env
+          application-name: react-docker
+          environment-name: Reactdocker-env
           filters:
             branches:
               only:
