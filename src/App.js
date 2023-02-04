@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <a href="#"> Never say Never YASAR</a>
+        <a href="#"> Never say Never YASAR Arafat Sulaiman</a>
       </header>
     </div>
   );
