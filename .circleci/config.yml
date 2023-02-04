@@ -1,11 +1,17 @@
-version: '2.1'
 orbs:
-  aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
+  node: circleci/node@4.1
+  eb: circleci/aws-elastic-beanstalk@2.0.0
 
 workflows:
-  elastic-beanstalk-workflow:
+  version: 2
+  build-and-deploy:
     jobs:
-      - aws-elastic-beanstalk/deploy:
+      - eb/deploy:
           context: aws-creds
-          environment-name: Reactsampleapplicationfinal-env
-          application-name: react-sample-application-final
+          application-name: react-docker
+          environment-name: Reactdocker-env
+          filters:
+            branches:
+              only:
+                - master
+          label: my-app-name-source-<<pipeline.number>>
