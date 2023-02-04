@@ -5,8 +5,7 @@ orbs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      - node/test
-      - eb/deploy:
+      - aws-elastic-beanstalk/deploy:
           context: aws-creds
           application-name: react-docker
           environment-name: Reactdocker-env
@@ -15,5 +14,3 @@ workflows:
               only:
                 - main
           label: version-<<pipeline.number>>
-          requires:
-            - node/test
